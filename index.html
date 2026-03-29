@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Círculo Social de Crescimento</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #0a1a2f, #000000);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(25px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 45px;
+      max-width: 650px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+      transition: 0.4s;
+    }
+
+    .container:hover {
+      transform: translateY(-3px);
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    label {
+      font-size: 13px;
+      margin-bottom: 6px;
+      display: block;
+      color: #bbb;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: white;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #2f80ed;
+      background: rgba(255,255,255,0.06);
+      box-shadow: 0 0 10px rgba(47,128,237,0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #2f80ed, #0b1a2b);
+      color: white;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(47,128,237,0.4);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .success {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      color: #4CAF50;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Círculo Social de Crescimento</h1>
+  <p>Preencha com atenção para solicitar seu acesso ao ambiente.</p>
+
+  <form id="form" action="https://docs.google.com/forms/d/e/SEU_ID/formResponse" method="POST" target="hidden_iframe">
+
+    <label>Nome completo</label>
+    <input name="entry.1543372697" required>
+
+    <label>Email</label>
+    <input type="email" name="entry.842335956" required>
+
+    <label>WhatsApp</label>
+    <input name="entry.641920667" required>
+
+    <label>Redes sociais</label>
+    <input name="entry.329589419" required>
+
+    <label>Área de atuação e especialidades</label>
+    <textarea name="entry.1652550118" required></textarea>
+
+    <label>Principal objetivo hoje</label>
+    <textarea name="entry.465231207" required></textarea>
+
+    <button type="submit">Solicitar acesso</button>
+  </form>
+
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+  <div class="success" id="successMsg">
+    Solicitação enviada. Verifique seu email.
+  </div>
+
+  <div class="footer">Ambiente exclusivo • Karen</div>
+</div>
+
+<script>
+  const form = document.getElementById("form");
+  const successMsg = document.getElementById("successMsg");
+
+  form.addEventListener("submit", function() {
+    setTimeout(() => {
+      form.style.display = "none";
+      successMsg.style.display = "block";
+    }, 1000);
+  });
+</script>
+
+</body>
+</html>
