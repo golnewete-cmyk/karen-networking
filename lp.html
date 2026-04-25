@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karen | Conexões Estratégicas</title>
+    <title>Karen | Strategic Presence</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@100;200;300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@100;300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #020205; /* Preto Profundo */
-            --navy: #0a1128; 
-            --purple-glow: #6c5ce7;
-            --accent-gradient: linear-gradient(135deg, #001f3f 0%, #6c5ce7 50%, #a29bfe 100%);
-            --glass: rgba(255, 255, 255, 0.02);
-            --border: rgba(108, 92, 231, 0.2);
+            --bg: #020205;
+            --navy: #050a1f;
+            --purple: #6c5ce7;
+            --purple-bright: #a29bfe;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(108, 92, 231, 0.25);
+            --accent-grad: linear-gradient(135deg, #0a1128 0%, #6c5ce7 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
@@ -26,28 +27,26 @@
             scroll-behavior: smooth;
         }
 
-        /* ANTI-AUTOFILL CORRECTION */
-        input:-webkit-autofill,
-        textarea:-webkit-autofill {
+        /* Anti-Autofill Fix */
+        input:-webkit-autofill {
             -webkit-text-fill-color: #fff !important;
-            -webkit-box-shadow: 0 0 0px 1000px #05050a inset !important;
-            transition: background-color 5000s ease-in-out 0s;
+            -webkit-box-shadow: 0 0 0px 1000px #020205 inset !important;
         }
 
-        /* Efeito de Fundo Dinâmico de Alto Nível */
-        .visual-aura {
+        /* Efeito de Aura Dinâmica */
+        .aura-visual {
             position: fixed;
-            width: 100%; height: 100%;
-            top: 0; left: 0;
+            width: 100vw; height: 100vh;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(10, 17, 40, 0.8) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(108, 92, 231, 0.15) 0%, transparent 50%);
+                radial-gradient(circle at 10% 20%, rgba(108, 92, 231, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(10, 17, 40, 0.6) 0%, transparent 50%);
             z-index: -1;
+            filter: blur(80px);
         }
 
-        /* Hero com Animação de Entrada */
+        /* Hero & Intro */
         .hero {
-            height: 100vh;
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -57,247 +56,203 @@
         }
 
         .hero-pre {
-            font-weight: 200;
-            letter-spacing: 15px;
+            font-weight: 100;
+            letter-spacing: 12px;
             font-size: 0.7rem;
-            color: var(--purple-glow);
-            margin-bottom: 25px;
+            color: var(--purple-bright);
             text-transform: uppercase;
-            animation: tracking-in-expand 1s ease-out;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(3rem, 15vw, 8rem);
+            font-size: clamp(3rem, 12vw, 7rem);
             font-weight: 900;
             letter-spacing: 15px;
-            background: linear-gradient(to bottom, #fff 40%, #6c5ce7);
+            background: linear-gradient(to bottom, #fff 30%, var(--purple-bright));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 30px rgba(108, 92, 231, 0.3));
+            filter: drop-shadow(0 0 25px rgba(108, 92, 231, 0.4));
         }
 
-        .hero h1 span {
-            display: block;
-            font-size: 0.35em;
-            letter-spacing: 25px;
-            font-weight: 200;
-            font-family: 'Montserrat';
-            color: #fff;
-            opacity: 0.8;
-            margin-top: -10px;
-        }
-
-        /* Botões Estilo Glassmorphism Premium */
-        .nav-group {
-            margin-top: 60px;
-            display: flex;
+        /* Grade de Conexões (Instagram, TikTok, Networking) */
+        .connection-grid {
+            max-width: 1200px;
+            margin: -100px auto 100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
+            padding: 0 20px;
         }
 
-        .btn-premium {
-            padding: 18px 45px;
-            border: 1px solid var(--border);
+        .magical-card {
             background: var(--glass);
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.65rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
+            border: 1px solid var(--border);
+            padding: 50px 30px;
+            text-align: center;
             backdrop-filter: blur(20px);
-            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
             overflow: hidden;
+            text-decoration: none;
+            color: #fff;
         }
 
-        .btn-premium:hover {
-            border-color: #fff;
-            box-shadow: 0 0 40px rgba(108, 92, 231, 0.4);
-            transform: translateY(-5px);
+        .magical-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--purple-bright);
+            box-shadow: 0 20px 50px rgba(108, 92, 231, 0.2);
+            background: rgba(108, 92, 231, 0.05);
         }
 
-        .btn-premium::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: 0.5s;
+        .magical-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+            background: linear-gradient(45deg, #fff, var(--purple-bright));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .btn-premium:hover::before { left: 100%; }
+        .magical-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
 
-        /* Seções de Conteúdo */
-        .content-section {
-            padding: 200px 20px;
-            max-width: 1100px;
+        .magical-card p {
+            font-size: 0.8rem;
+            font-weight: 200;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 1px;
+        }
+
+        /* Seção de Texto Conceitual */
+        .about-text {
+            padding: 150px 20px;
+            text-align: center;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .label-tag {
-            color: var(--purple-glow);
-            font-weight: 700;
-            font-size: 0.8rem;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            display: block;
-        }
-
-        h2 {
+        .about-text h2 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            line-height: 1.1;
-            margin-bottom: 50px;
-            font-weight: 400;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 40px;
         }
 
-        h2 span { 
-            color: var(--purple-glow);
-            text-shadow: 0 0 20px rgba(108, 92, 231, 0.5);
-        }
+        .about-text h2 span { color: var(--purple-bright); text-shadow: 0 0 15px rgba(108, 92, 231, 0.5); }
 
-        .copy-body {
-            font-size: 1.2rem;
-            font-weight: 200;
-            color: rgba(255,255,255,0.6);
-            line-height: 2;
-            max-width: 800px;
-        }
-
-        /* Grid de Cards Dinâmicos */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin-top: 80px;
-        }
-
-        .card-inner {
-            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
-            border: 1px solid var(--border);
-            padding: 80px 60px;
-            transition: 0.5s;
-        }
-
-        .card-inner:hover {
-            border-color: var(--purple-glow);
-            background: rgba(108, 92, 231, 0.05);
-            transform: scale(1.03);
-        }
-
-        .btn-action {
-            display: block;
+        /* Seção de Parceria Corporativa */
+        .partnership-section {
+            padding: 150px 20px;
+            background: linear-gradient(180deg, transparent, rgba(10, 17, 40, 0.4), transparent);
             text-align: center;
-            padding: 22px;
-            margin-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .btn-collab {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 35px 80px;
             background: #fff;
             color: #000;
             text-decoration: none;
             font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 0.75rem;
-            transition: 0.4s;
-        }
-
-        .btn-action:hover {
-            background: var(--purple-glow);
-            color: #fff;
-            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.5);
-        }
-
-        /* Seção de Parceria Final */
-        .partnership-box {
-            text-align: center;
-            padding: 150px 20px;
-            background: radial-gradient(circle at center, rgba(108, 92, 231, 0.1), transparent);
-        }
-
-        .btn-email {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            background: linear-gradient(90deg, #0a1128, #6c5ce7);
-            padding: 25px 60px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
             letter-spacing: 5px;
             text-transform: uppercase;
-            font-size: 0.8rem;
-            border-radius: 4px;
+            font-size: 0.9rem;
             transition: 0.5s;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 0 40px rgba(255,255,255,0.1);
         }
 
-        .btn-email:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 60px rgba(108, 92, 231, 0.4);
-            filter: brightness(1.2);
+        .btn-collab span {
+            font-size: 0.6rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #555;
         }
+
+        .btn-collab:hover {
+            background: var(--purple);
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(108, 92, 231, 0.6);
+        }
+
+        .btn-collab:hover span { color: #ddd; }
 
         footer {
-            padding: 100px 20px;
+            padding: 80px 20px;
             text-align: center;
             font-size: 0.6rem;
-            letter-spacing: 8px;
-            color: rgba(255,255,255,0.3);
-            border-top: 1px solid var(--border);
-        }
-
-        @keyframes tracking-in-expand {
-            0% { letter-spacing: -0.5em; opacity: 0; }
-            40% { opacity: 0.6; }
-            100% { opacity: 1; }
+            letter-spacing: 6px;
+            opacity: 0.4;
         }
 
         @media (max-width: 768px) {
-            .nav-group { flex-direction: column; width: 100%; padding: 0 20px; }
-            .cards-grid { grid-template-columns: 1fr; }
+            .connection-grid { margin-top: 0; }
+            .btn-collab { width: 90%; padding: 30px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="visual-aura"></div>
+    <div class="aura-visual"></div>
 
-    <header class="hero">
-        <span class="hero-pre">The Strategic Layer</span>
-        <h1>KAREN <span>STRATEGIST</span></h1>
-        <div class="nav-group">
-            <a href="#about" class="btn-premium">Visão</a>
-            <a href="#access" class="btn-premium">Acessos</a>
-            <a href="#collab" class="btn-premium">Conexão</a>
-        </div>
-    </header>
-
-    <section id="about" class="content-section">
-        <span class="label-tag">Core Value</span>
-        <h2>Ambientes certos <span>mudam tudo.</span></h2>
-        <div class="copy-body">
-            Com o tempo, fica evidente que a evolução não depende apenas de esforço — depende do ambiente. 
-            Pessoas que crescem de forma consistente tendem a tomar decisões mais estratégicas sobre onde estão e com quem se conectam. 
-            <br><br>
-            Karen elaborou um posicionamento baseado nisso: menos exposição vazia, mais construção real. 
-            O foco é aproximar pessoas que entendem o valor de estar nos lugares certos.
-        </div>
+    <section class="hero">
+        <span class="hero-pre">High-End Connections</span>
+        <h1>KAREN SOUZA</h1>
     </section>
 
-    <section id="access" class="content-section">
-        <span class="label-tag">The Gates</span>
-        <div class="cards-grid">
-            <div class="card-inner">
-                <span class="label-tag" style="color: #fff; opacity: 0.5;">Level 01</span>
-                <h3 style="font-family:'Cinzel'; font-size: 2rem; margin-bottom: 20px;">Parceria Estratégica</h3>
-                <p style="color: rgba(255,255,255,0.5); font-size: 0.95rem; font-weight: 200;">
-                    Alinhamento bilateral para projetos que demandam alta performance e visão de futuro conjunta.
-                </p>
-                <a href="parceria.html" class="btn-action">Solicitar Proposta</a>
-            </div>
+    <div class="connection-grid">
+        <a href="https://www.instagram.com/karennsouza.ofc/" target="_blank" class="magical-card">
+            <i class="fab fa-instagram"></i>
+            <h3>INSTAGRAM</h3>
+            <p>Visual ID & Lifestyle Estratégico</p>
+        </a>
 
-            <div class="card-inner">
-                <span class="label-tag" style="color: #fff; opacity: 0.5;">Level 02</span>
-                <h3 style="font-family:'Cinzel'; font-size: 2rem; margin-bottom: 20px;">Círculo Restrito</h3>
-                <p style="color: rgba(255,255,255,0.5); font-size: 0.95rem; font-weight: 200;">
-                    Expansão de repertório e networking com players que operam em alto nível de consciência
+        <a href="index.html" class="magical-card" style="border-color: var(--purple-bright); background: rgba(108, 92, 231, 0.1);">
+            <i class="fas fa-users-rays"></i>
+            <h3>NETWORKING</h3>
+            <p>Acesso ao Círculo Restrito</p>
+        </a>
+
+        <a href="https://www.tiktok.com/@karen.kahh" target="_blank" class="magical-card">
+            <i class="fab fa-tiktok"></i>
+            <h3>TIKTOK</h3>
+            <p>Insights em Movimento Real</p>
+        </a>
+    </div>
+
+    <section class="about-text">
+        <h2>Ambientes Certos <span>Mudam Tudo.</span></h2>
+        <p style="font-weight: 200; color: rgba(255,255,255,0.7); line-height: 2;">
+            A evolução não é fruto apenas de esforço isolado, mas da frequência dos ambientes que você frequenta. 
+            Karen constrói conexões baseadas em posicionamento real e crescimento consistente.
+        </p>
+    </section>
+
+    <section class="partnership-section">
+        <span class="hero-pre" style="display: block; margin-bottom: 50px;">Business Inquiries</span>
+        
+        <a href="mailto:iakarensouza@gmail.com?subject=Proposta de Parceria Estratégica - Karen Souza&body=Olá Karen,%0D%0A%0D%0AEstou entrando em contato para discutirmos uma oportunidade de parceria estratégica.%0D%0A%0D%0AAguardamos seu retorno para alinhamento de detalhes." class="btn-collab">
+            <i class="fas fa-briefcase" style="font-size: 1.5rem; margin-bottom: 10px;"></i>
+            SOLICITAR PARCERIA
+            <span>Clique para enviar e-mail direto</span>
+        </a>
+
+        <p style="margin-top: 40px; font-size: 0.7rem; color: rgba(255,255,255,0.3); letter-spacing: 3px;">
+            PARA COLLABS, CAMPANHAS E CONEXÕES B2B.
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2026 KAREN SOUZA | TODOS OS DIREITOS RESERVADOS
+    </footer>
+
+</body>
+</html>
