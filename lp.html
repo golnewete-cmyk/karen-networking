@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karen | Strategic Presence</title>
+    <title>Karen Souza | Strategic Presence</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@100;300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #020205;
-            --navy: #050a1f;
-            --purple: #6c5ce7;
-            --purple-bright: #a29bfe;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(108, 92, 231, 0.25);
-            --accent-grad: linear-gradient(135deg, #0a1128 0%, #6c5ce7 100%);
+            --bg: #010208;
+            --purple-main: #6c5ce7;
+            --glass: rgba(255, 255, 255, 0.02);
+            --border: rgba(255, 255, 255, 0.08);
+            /* Cores das Redes */
+            --instagram: #e1306c;
+            --tiktok: #00f2ea;
+            --net-glow: #a29bfe;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
@@ -24,234 +25,227 @@
             color: #fff; 
             font-family: 'Montserrat', sans-serif; 
             overflow-x: hidden;
-            scroll-behavior: smooth;
+            line-height: 1.6;
         }
 
-        /* Anti-Autofill Fix */
-        input:-webkit-autofill {
-            -webkit-text-fill-color: #fff !important;
-            -webkit-box-shadow: 0 0 0px 1000px #020205 inset !important;
-        }
-
-        /* Efeito de Aura Dinâmica */
-        .aura-visual {
+        /* Fundo Dinâmico */
+        .visual-aura {
             position: fixed;
             width: 100vw; height: 100vh;
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(108, 92, 231, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(10, 17, 40, 0.6) 0%, transparent 50%);
+            background: radial-gradient(circle at 50% -20%, rgba(108, 92, 231, 0.15), transparent 70%);
             z-index: -1;
-            filter: blur(80px);
         }
 
-        /* Hero & Intro */
+        /* Header */
         .hero {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 120px 20px 60px;
             text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero-pre {
-            font-weight: 100;
-            letter-spacing: 12px;
-            font-size: 0.7rem;
-            color: var(--purple-bright);
-            text-transform: uppercase;
-            margin-bottom: 20px;
         }
 
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(3rem, 12vw, 7rem);
-            font-weight: 900;
+            font-size: clamp(2.5rem, 8vw, 6rem);
             letter-spacing: 15px;
-            background: linear-gradient(to bottom, #fff 30%, var(--purple-bright));
+            font-weight: 900;
+            background: linear-gradient(to bottom, #fff, #666);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 25px rgba(108, 92, 231, 0.4));
+            margin-bottom: 20px;
         }
 
-        /* Grade de Conexões (Instagram, TikTok, Networking) */
-        .connection-grid {
-            max-width: 1200px;
-            margin: -100px auto 100px;
+        .hero-copy {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-weight: 200;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* Grade de Cards com Efeitos de Cor */
+        .grid-access {
+            max-width: 1100px;
+            margin: 0 auto 100px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
             padding: 0 20px;
         }
 
-        .magical-card {
+        .access-box {
             background: var(--glass);
             border: 1px solid var(--border);
-            padding: 50px 30px;
+            padding: 60px 40px;
             text-align: center;
-            backdrop-filter: blur(20px);
-            transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            overflow: hidden;
-            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .access-box i { 
+            font-size: 2.5rem; 
+            margin-bottom: 25px; 
+            transition: 0.5s; 
             color: #fff;
         }
 
-        .magical-card:hover {
-            transform: translateY(-15px);
-            border-color: var(--purple-bright);
-            box-shadow: 0 20px 50px rgba(108, 92, 231, 0.2);
-            background: rgba(108, 92, 231, 0.05);
-        }
-
-        .magical-card i {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: block;
-            background: linear-gradient(45deg, #fff, var(--purple-bright));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .magical-card h3 {
+        .access-box h3 {
             font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
-        .magical-card p {
+        .access-box p {
             font-size: 0.8rem;
-            font-weight: 200;
-            color: rgba(255,255,255,0.6);
-            letter-spacing: 1px;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 35px;
+            font-weight: 300;
         }
 
-        /* Seção de Texto Conceitual */
-        .about-text {
-            padding: 150px 20px;
+        /* Botões internos dos cards */
+        .inner-btn {
+            padding: 12px 30px;
+            border: 1px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: 0.4s;
+        }
+
+        /* Hover Dinâmico por Rede */
+        /* INSTAGRAM */
+        .box-insta:hover { 
+            border-color: var(--instagram); 
+            box-shadow: 0 0 40px rgba(225, 48, 108, 0.15); 
+        }
+        .box-insta:hover i { color: var(--instagram); transform: scale(1.1); }
+        .box-insta:hover .inner-btn { background: var(--instagram); border-color: var(--instagram); }
+
+        /* NETWORKING */
+        .box-net:hover { 
+            border-color: var(--purple-main); 
+            box-shadow: 0 0 40px rgba(108, 92, 231, 0.15); 
+        }
+        .box-net:hover i { color: var(--purple-main); transform: scale(1.1); }
+        .box-net:hover .inner-btn { background: var(--purple-main); border-color: var(--purple-main); }
+
+        /* TIKTOK */
+        .box-tiktok:hover { 
+            border-color: var(--tiktok); 
+            box-shadow: 0 0 40px rgba(0, 242, 234, 0.15); 
+        }
+        .box-tiktok:hover i { color: var(--tiktok); transform: scale(1.1); }
+        .box-tiktok:hover .inner-btn { background: var(--tiktok); border-color: var(--tiktok); color: #000; }
+
+        /* Seção de Parceria */
+        .partnership-area {
+            padding: 120px 20px;
             text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .about-text h2 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 40px;
-        }
-
-        .about-text h2 span { color: var(--purple-bright); text-shadow: 0 0 15px rgba(108, 92, 231, 0.5); }
-
-        /* Seção de Parceria Corporativa */
-        .partnership-section {
-            padding: 150px 20px;
-            background: linear-gradient(180deg, transparent, rgba(10, 17, 40, 0.4), transparent);
-            text-align: center;
+            background: linear-gradient(to bottom, transparent, rgba(108, 92, 231, 0.05));
             border-top: 1px solid var(--border);
         }
 
-        .btn-collab {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            padding: 35px 80px;
+        /* O BOTÃO DE E-MAIL - FORMATO REFEITO PARA FUNCIONAMENTO TOTAL */
+        .email-trigger {
+            display: inline-block;
             background: #fff;
             color: #000;
+            padding: 25px 60px;
             text-decoration: none;
             font-weight: 800;
             letter-spacing: 5px;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            font-size: 0.9rem;
             transition: 0.5s;
-            box-shadow: 0 0 40px rgba(255,255,255,0.1);
+            border: none;
+            cursor: pointer;
         }
 
-        .btn-collab span {
-            font-size: 0.6rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            color: #555;
-        }
-
-        .btn-collab:hover {
-            background: var(--purple);
+        .email-trigger:hover {
+            background: var(--purple-main);
             color: #fff;
-            transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(108, 92, 231, 0.6);
+            box-shadow: 0 0 50px rgba(108, 92, 231, 0.5);
+            transform: translateY(-5px);
         }
 
-        .btn-collab:hover span { color: #ddd; }
+        .email-copy {
+            margin-top: 30px;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            color: rgba(255,255,255,0.3);
+        }
 
         footer {
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
-            font-size: 0.6rem;
-            letter-spacing: 6px;
-            opacity: 0.4;
+            font-size: 0.55rem;
+            letter-spacing: 5px;
+            opacity: 0.3;
         }
 
         @media (max-width: 768px) {
-            .connection-grid { margin-top: 0; }
-            .btn-collab { width: 90%; padding: 30px 20px; }
+            .hero h1 { letter-spacing: 8px; }
+            .grid-access { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="aura-visual"></div>
+    <div class="visual-aura"></div>
 
-    <section class="hero">
-        <span class="hero-pre">High-End Connections</span>
+    <header class="hero">
         <h1>KAREN SOUZA</h1>
-    </section>
+        <div class="hero-copy">
+            Curadoria de ambientes de alta performance e conexões de valor. <br>
+            Onde a estratégia encontra o posicionamento real.
+        </div>
+    </header>
 
-    <div class="connection-grid">
-        <a href="https://www.instagram.com/karennsouza.ofc/" target="_blank" class="magical-card">
+    <div class="grid-access">
+        <div class="access-box box-insta">
             <i class="fab fa-instagram"></i>
-            <h3>INSTAGRAM</h3>
-            <p>Visual ID & Lifestyle Estratégico</p>
-        </a>
+            <h3>VISUAL ID</h3>
+            <p>Acompanhe o lifestyle e a construção de autoridade em tempo real.</p>
+            <a href="https://www.instagram.com/karennsouza.ofc/" target="_blank" class="inner-btn">Seguir no Instagram</a>
+        </div>
 
-        <a href="index.html" class="magical-card" style="border-color: var(--purple-bright); background: rgba(108, 92, 231, 0.1);">
-            <i class="fas fa-users-rays"></i>
-            <h3>NETWORKING</h3>
-            <p>Acesso ao Círculo Restrito</p>
-        </a>
+        <div class="access-box box-net">
+            <i class="fas fa-fingerprint"></i>
+            <h3>CÍRCULO RESTRITO</h3>
+            <p>Acesso exclusivo para quem busca transitar entre os players do mercado.</p>
+            <a href="index.html" class="inner-btn">Entrar no Círculo</a>
+        </div>
 
-        <a href="https://www.tiktok.com/@karen.kahh" target="_blank" class="magical-card">
+        <div class="access-box box-tiktok">
             <i class="fab fa-tiktok"></i>
-            <h3>TIKTOK</h3>
-            <p>Insights em Movimento Real</p>
-        </a>
+            <h3>TREND INSIGHTS</h3>
+            <p>Análises rápidas e visão estratégica sobre comportamento e tendências.</p>
+            <a href="https://www.tiktok.com/@karen.kahh" target="_blank" class="inner-btn">Acessar TikTok</a>
+        </div>
     </div>
 
-    <section class="about-text">
-        <h2>Ambientes Certos <span>Mudam Tudo.</span></h2>
-        <p style="font-weight: 200; color: rgba(255,255,255,0.7); line-height: 2;">
-            A evolução não é fruto apenas de esforço isolado, mas da frequência dos ambientes que você frequenta. 
-            Karen constrói conexões baseadas em posicionamento real e crescimento consistente.
-        </p>
-    </section>
-
-    <section class="partnership-section">
-        <span class="hero-pre" style="display: block; margin-bottom: 50px;">Business Inquiries</span>
+    <section class="partnership-area">
+        <h2 style="font-family:'Cinzel'; letter-spacing: 8px; margin-bottom: 40px; font-weight: 400;">COLABORAÇÕES <span>ESTRATÉGICAS</span></h2>
         
-        <a href="mailto:iakarensouza@gmail.com?subject=Proposta de Parceria Estratégica - Karen Souza&body=Olá Karen,%0D%0A%0D%0AEstou entrando em contato para discutirmos uma oportunidade de parceria estratégica.%0D%0A%0D%0AAguardamos seu retorno para alinhamento de detalhes." class="btn-collab">
-            <i class="fas fa-briefcase" style="font-size: 1.5rem; margin-bottom: 10px;"></i>
-            SOLICITAR PARCERIA
-            <span>Clique para enviar e-mail direto</span>
+        <a href="mailto:iakarensouza@gmail.com?subject=Proposta%20de%20Parceria%20Estrat%C3%A9gica%20-%20Karen%20Souza&body=Ol%C3%A1%20Karen%2C%0A%0AGostaria%20de%20apresentar%20uma%20proposta%20estrat%C3%A9gica%20para%20alinhamento%20de%20marca.%20Aguardamos%20seu%20contato." class="email-trigger">
+            INICIAR NEGOCIAÇÃO
         </a>
 
-        <p style="margin-top: 40px; font-size: 0.7rem; color: rgba(255,255,255,0.3); letter-spacing: 3px;">
-            PARA COLLABS, CAMPANHAS E CONEXÕES B2B.
-        </p>
+        <div class="email-copy">
+            <i class="fas fa-envelope-open-text" style="margin-right: 10px;"></i>
+            DIRECIONADO PARA: IAKARENSOUZA@GMAIL.COM
+        </div>
     </section>
 
     <footer>
-        &copy; 2026 KAREN SOUZA | TODOS OS DIREITOS RESERVADOS
+        &copy; 2026 KAREN SOUZA | HIGH-END SOLUTIONS
     </footer>
 
 </body>
