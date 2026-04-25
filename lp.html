@@ -1,69 +1,292 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karen • Conexões Estratégicas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karen | Conexões Estratégicas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@100;200;300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #02050a;
+            --emerald: #00c853;
+            --emerald-glow: rgba(0, 200, 83, 0.15);
+            --silver: #E5E5E5;
+            --deep-blue: #0a1a2f;
+            --accent-gradient: linear-gradient(135deg, #00c853, #b2ff59, #00e676);
+            --glass-white: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(255, 255, 255, 0.07);
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        
+        body { 
+            background-color: var(--bg); 
+            color: #fff; 
+            font-family: 'Montserrat', sans-serif; 
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.8;
+        }
 
-  <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
-    body {background:radial-gradient(circle at top,#0a1a2f,#000); color:white; min-height:100vh; padding:20px; display:flex; justify-content:center; align-items:center;}
-    .container {max-width:950px; width:100%; padding:60px 40px; border-radius:28px; background:rgba(255,255,255,0.04); backdrop-filter:blur(30px); border:1px solid rgba(255,255,255,0.08); box-shadow:0 30px 100px rgba(0,0,0,0.9); animation:fadeUp 1s ease;}
-    @keyframes fadeUp {from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);}}
-    h1 {text-align:center; font-size:38px; margin-bottom:12px;}
-    .subtitle {text-align:center; color:#aaa; margin-bottom:30px;}
-    .macro {text-align:center; color:#ccc; line-height:1.8; margin-bottom:50px;}
-    .grid {display:flex; flex-direction:column; gap:25px;}
-    .card {padding:30px; border-radius:20px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); transition:0.4s; position:relative; overflow:hidden;}
-    .card:hover {transform:translateY(-5px);}
-    .card h2 {margin-bottom:10px;}
-    .card p {color:#bbb; margin-bottom:20px; line-height:1.7;}
-    .btn {display:block; text-align:center; padding:16px; border-radius:14px; text-decoration:none; font-weight:600; transition:0.3s; position:relative; overflow:hidden;}
-    .parceria {background:linear-gradient(135deg,#d4af37,#1a1405); color:white; box-shadow:0 10px 30px rgba(212,175,55,0.3);}
-    .parceria:hover {box-shadow:0 15px 50px rgba(212,175,55,0.6); transform:scale(1.02);}
-    .network {background:linear-gradient(135deg,#00c853,#062914); color:white; box-shadow:0 10px 30px rgba(0,200,83,0.3);}
-    .network:hover {box-shadow:0 15px 50px rgba(0,200,83,0.6); transform:scale(1.02);}
-    .btn::after {content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(120deg,transparent,rgba(255,255,255,0.3),transparent); transition:0.6s;}
-    .btn:hover::after {left:100%;}
-    .footer {text-align:center; margin-top:30px; color:#666; font-size:12px;}
-    @media (max-width:600px) {h1{font-size:28px;}}
-  </style>
+        /* Anti-Autofill Fix */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus {
+            -webkit-text-fill-color: #fff !important;
+            -webkit-box-shadow: 0 0 0px 1000px #02050a inset !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        /* Camada de Design Dinâmico */
+        .aura-bg {
+            position: fixed;
+            width: 100%; height: 100%;
+            top: 0; left: 0;
+            background: 
+                radial-gradient(circle at 5% 10%, rgba(0, 200, 83, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 95% 90%, rgba(10, 26, 47, 0.5) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        /* Hero Cinema */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-pre {
+            font-weight: 100;
+            letter-spacing: 12px;
+            font-size: 0.7rem;
+            color: var(--emerald);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 12vw, 7rem);
+            font-weight: 900;
+            letter-spacing: 20px;
+            color: #fff;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));
+        }
+
+        .hero h1 span {
+            display: block;
+            font-size: 0.4em;
+            letter-spacing: 30px;
+            font-weight: 200;
+            font-family: 'Montserrat';
+            color: var(--silver);
+            margin-top: -10px;
+        }
+
+        .hero-nav {
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-minimal {
+            padding: 15px 35px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-white);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            backdrop-filter: blur(15px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-minimal:hover {
+            border-color: var(--emerald);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.1);
+        }
+
+        /* Seções de Copy */
+        .section-container {
+            padding: 180px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .label {
+            color: var(--emerald);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.2;
+            margin-bottom: 45px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        h2 span { color: var(--emerald); }
+
+        .copy-text {
+            font-size: 1.1rem;
+            font-weight: 200;
+            color: rgba(255,255,255,0.7);
+            max-width: 850px;
+            margin-bottom: 60px;
+        }
+
+        /* Grid de Cartões Premium */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .premium-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid var(--glass-border);
+            padding: 80px 50px;
+            transition: 0.6s ease;
+        }
+
+        .premium-card:hover {
+            border-color: var(--emerald);
+            background: rgba(0, 200, 83, 0.02);
+            transform: scale(1.02);
+        }
+
+        /* Botões Estilizados */
+        .btn-glow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 22px 40px;
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: 0.4s;
+            border-radius: 2px;
+        }
+
+        .btn-emerald {
+            background: var(--emerald);
+            color: #000;
+            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.2);
+        }
+
+        .btn-emerald:hover {
+            box-shadow: 0 15px 50px rgba(0, 200, 83, 0.4);
+            letter-spacing: 5px;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--silver);
+            color: var(--silver);
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Footer */
+        footer {
+            padding: 100px 20px;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { letter-spacing: 10px; }
+            .hero-nav { flex-direction: column; width: 100%; padding: 0 30px; }
+            .grid-cards { grid-template-columns: 1fr; }
+            .section-container { padding: 100px 20px; }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <h1>Ambientes certos mudam tudo</h1>
-  <div class="subtitle">
-    Direção clara. Conexões reais. Crescimento consistente.
-  </div>
-  <div class="macro">
-    Com o tempo, fica evidente que a evolução não depende apenas de esforço — depende do ambiente.  
-    Pessoas que crescem de forma consistente tendem a tomar decisões mais estratégicas sobre onde estão e com quem se conectam.  
-    Karen elaborou um posicionamento baseado nisso: menos exposição vazia, mais construção real.  
-    Isso naturalmente aproxima pessoas que estão em movimento e que entendem o valor de estar nos lugares certos.  
-    Se você se identifica com essa visão, existem dois caminhos abaixo.
-  </div>
-  <div class="grid">
-    <div class="card">
-      <h2>Parceria estratégica</h2>
-      <p>
-        Para quem já está construindo algo com direção e entende o valor de conexões bem estruturadas.  
-        Aqui, o foco é alinhamento, visão e potencial real de crescimento conjunto.
-      </p>
-      <a href="parceria.html" class="btn parceria">Acessar parceria</a>
-    </div>
-    <div class="card">
-      <h2>Círculo de networking</h2>
-      <p>
-        Um ambiente para quem busca evoluir constantemente, expandir a visão e se conectar com pessoas que também estão em movimento.
-      </p>
-      <a href="index.html" class="btn network">Entrar no círculo</a>
-    </div>
-  </div>
-  <div class="footer">
-    Ambientes selecionados • Karen
-  </div>
-</div>
+
+    <div class="aura-bg"></div>
+
+    <header class="hero">
+        <span class="hero-pre">Selected Environments</span>
+        <h1>KAREN <span>STRATEGIST</span></h1>
+        <div class="hero-nav">
+            <a href="#vision" class="btn-minimal">Visão</a>
+            <a href="#paths" class="btn-minimal">Caminhos</a>
+            <a href="#contact" class="btn-minimal">Contato</a>
+        </div>
+    </header>
+
+    <section id="vision" class="section-container">
+        <span class="label">The Philosophy</span>
+        <h2>Ambientes certos <span>mudam tudo.</span></h2>
+        <p class="copy-text">
+            Com o tempo, fica evidente que a evolução não depende apenas de esforço — depende do ambiente. 
+            Pessoas que crescem de forma consistente tendem a tomar decisões mais estratégicas sobre onde estão e com quem se conectam. 
+            <br><br>
+            Karen elaborou um posicionamento baseado nisso: menos exposição vazia, mais construção real. 
+            Isso naturalmente aproxima pessoas que estão em movimento e que entendem o valor de estar nos lugares certos.
+        </p>
+    </section>
+
+    <section id="paths" class="section-container">
+        <span class="label">Access Points</span>
+        <div class="grid-cards">
+            <div class="premium-card">
+                <span class="label">Business</span>
+                <h3 style="font-family:'Cinzel'; font-size: 1.8rem; margin-bottom: 20px;">Parceria Estratégica</h3>
+                <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 40px; font-weight: 200;">
+                    Para quem já está construindo algo com direção e entende o valor de conexões bem estruturadas. Foco em alinhamento e potencial real de crescimento conjunto.
+                </p>
+                <a href="parceria.html" class="btn-glow btn-emerald">Acessar Parceria</a>
+            </div>
+
+            <div class="premium-card">
+                <span class="label">Community</span>
+                <h3 style="font-family:'Cinzel'; font-size: 1.8rem; margin-bottom: 20px;">Círculo de Networking</h3>
+                <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 40px; font-weight: 200;">
+                    Um ambiente para quem busca evoluir constantemente, expandir a visão e se conectar com pessoas que também estão em movimento.
+                </p>
+                <a href="index.html" class="btn-glow btn-outline">Entrar no Círculo</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-container" style="text-align: center;">
+        <span class="label">Get in Touch</span>
+        <h2>Inicie uma <span>Conexão</span></h2>
+        <p class="copy-text" style="margin: 0 auto 50px;">
+            Para convites estratégicos ou dúvidas sobre o acesso aos grupos de networking.
+        </p>
+        <a href="mailto:contato@karen.com" class="btn-minimal" style="border-color: var(--emerald); color: var(--emerald); padding: 25px 60px;">Enviar E-mail</a>
+    </section>
+
+    <footer>
+        <p style="font-size: 0.6rem; letter-spacing: 5px; font-weight: 300;">AMBIENTES SELECIONADOS • KAREN • 2026</p>
+    </footer>
+
 </body>
 </html>
