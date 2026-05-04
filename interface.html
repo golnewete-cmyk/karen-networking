@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karen Souza | Hub Interno</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@100;300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #010208;
+            --purple: #6c5ce7;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            margin: 0; background: var(--bg); color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            display: flex; justify-content: center; align-items: center;
+            height: 100vh; overflow: hidden;
+        }
+
+        /* Aura de fundo (ID Visual Karen Souza) */
+        .aura {
+            position: absolute; top: -10%; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(108, 92, 231, 0.12), transparent 70%);
+            z-index: 0;
+        }
+
+        .hub-container {
+            position: relative; z-index: 1; text-align: center;
+            max-width: 800px; width: 90%;
+        }
+
+        header { margin-bottom: 60px; }
+        header p { text-transform: uppercase; letter-spacing: 6px; font-size: 0.7rem; color: var(--purple); font-weight: 700; }
+        header h1 { font-family: 'Cinzel', serif; font-size: 2.8rem; letter-spacing: 12px; font-weight: 900; margin: 10px 0; background: linear-gradient(to bottom, #fff, #888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .grid-cards {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+        }
+
+        .card {
+            background: var(--glass); border: 1px solid var(--border);
+            padding: 50px 20px; text-decoration: none; color: #fff;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; flex-direction: column; align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            border-color: var(--purple); background: rgba(108, 92, 231, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .card i { font-size: 2rem; margin-bottom: 20px; color: #fff; }
+        .card span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; opacity: 0.8; }
+
+        /* Item em Construção */
+        .card.locked { opacity: 0.4; cursor: default; border-style: dashed; }
+        .card.locked:hover { transform: none; border-color: var(--border); }
+        .badge { position: absolute; top: 15px; font-size: 0.5rem; letter-spacing: 2px; background: rgba(255,255,255,0.1); padding: 3px 8px; }
+
+        footer { margin-top: 80px; font-size: 0.55rem; letter-spacing: 4px; opacity: 0.3; text-transform: uppercase; }
+
+        @media (max-width: 600px) { .grid-cards { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <div class="aura"></div>
+
+    <div class="hub-container">
+        <header>
+            <p>Ecossistema de Alta Performance</p>
+            <h1>HUB INTERNO</h1>
+        </header>
+
+        <div class="grid-cards">
+            <a href="https://docs.google.com/spreadsheets/d/1O9xybolkqRCkb25kWigRZuTvGx-XC-HdCSGcQMeIH2E/edit?usp=sharing" target="_blank" class="card">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Gestão Interna</span>
+            </a>
+
+            <a href="https://landing-mell-vjtbor2mwy7a5btnvcgnuk.streamlit.app/" target="_blank" class="card">
+                <i class="fa-solid fa-brain"></i>
+                <span>Inteligência Editorial</span>
+            </a>
+
+            <a href="https://golnewete-cmyk.github.io/karen-networking/cadastrogrupo.html" target="_blank" class="card">
+                <i class="fa-solid fa-users-rectangle"></i>
+                <span>Grupo Networking</span>
+            </a>
+
+            <div class="card locked">
+                <div class="badge">EM BREVE</div>
+                <i class="fa-solid fa-lock"></i>
+                <span>Novo Entregável</span>
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2026 KAREN SOUZA | STRATEGIC PRESENCE
+        </footer>
+    </div>
+
+</body>
+</html>
