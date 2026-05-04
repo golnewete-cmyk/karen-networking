@@ -84,7 +84,7 @@
             font-weight: 700;
         }
 
-        input {
+        input, select {
             background: var(--input-bg);
             border: 1px solid var(--border);
             padding: 18px;
@@ -95,10 +95,18 @@
             border-radius: 0;
         }
 
-        input:focus {
+        select option { background: #010208; color: #fff; }
+
+        input:focus, select:focus {
             border-color: var(--purple-main);
             background: rgba(108, 92, 231, 0.08);
             box-shadow: 0 0 20px rgba(108, 92, 231, 0.1);
+        }
+
+        .date-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.5fr;
+            gap: 10px;
         }
 
         .submit-btn {
@@ -181,9 +189,27 @@
                 <input type="text" name="entry.1483219488" placeholder="Digite a chave Pix (E-mail, CPF ou Aleatória)" required>
             </div>
 
-            <input type="hidden" name="entry.509815525_year" value="2026">
-            <input type="hidden" name="entry.509815525_month" value="05">
-            <input type="hidden" name="entry.509815525_day" value="04">
+            <div class="input-group full-width">
+                <label>Prazo de Pagamento</label>
+                <div class="date-row">
+                    <select name="entry.509815525_day" required>
+                        <option value="" disabled selected>Dia</option>
+                        <script>for(let i=1; i<=31; i++) document.write(`<option value="${i}">${i}</option>`);</script>
+                    </select>
+                    <select name="entry.509815525_month" required>
+                        <option value="" disabled selected>Mês</option>
+                        <option value="1">Janeiro</option><option value="2">Fevereiro</option><option value="3">Março</option>
+                        <option value="4">Abril</option><option value="5">Maio</option><option value="6">Junho</option>
+                        <option value="7">Julho</option><option value="8">Agosto</option><option value="9">Setembro</option>
+                        <option value="10">Outubro</option><option value="11">Novembro</option><option value="12">Dezembro</option>
+                    </select>
+                    <select name="entry.509815525_year" required>
+                        <option value="" disabled selected>Ano</option>
+                        <option value="2024">2024</option><option value="2025">2025</option>
+                        <option value="2026">2026</option><option value="2027">2027</option>
+                    </select>
+                </div>
+            </div>
 
             <button type="submit" class="submit-btn">Finalizar Onboarding</button>
         </form>
