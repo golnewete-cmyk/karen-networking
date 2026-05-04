@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karen Souza | Gestão Círculo Restrito</title>
+    <title>Karen Souza | Onboarding High-End</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@100;300;400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -34,7 +34,7 @@
         }
 
         .form-container {
-            max-width: 850px;
+            max-width: 800px;
             margin: 60px auto;
             padding: 40px 20px;
             text-align: center;
@@ -44,61 +44,61 @@
 
         .header-form h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            font-size: clamp(1.8rem, 5vw, 3rem);
             letter-spacing: 12px;
             background: linear-gradient(to bottom, #fff, #777);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: 900;
         }
 
         .header-form p {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 5px;
             color: var(--purple-main);
-            font-weight: 400;
+            font-weight: 600;
         }
 
         form {
             background: var(--glass);
             border: 1px solid var(--border);
-            padding: 40px;
+            padding: 50px;
             backdrop-filter: blur(15px);
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 25px;
             text-align: left;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
 
         .input-group { display: flex; flex-direction: column; }
         .full-width { grid-column: span 2; }
 
         label {
-            font-size: 0.6rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 8px;
-            color: rgba(255,255,255,0.4);
-            font-weight: 600;
+            margin-bottom: 10px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 700;
         }
 
         input {
             background: var(--input-bg);
             border: 1px solid var(--border);
-            padding: 16px;
+            padding: 18px;
             color: #fff;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            transition: 0.3s;
+            font-size: 0.9rem;
+            transition: 0.4s;
             border-radius: 0;
         }
 
         input:focus {
             border-color: var(--purple-main);
             background: rgba(108, 92, 231, 0.08);
+            box-shadow: 0 0 20px rgba(108, 92, 231, 0.1);
         }
 
         .submit-btn {
@@ -113,7 +113,7 @@
             letter-spacing: 6px;
             text-transform: uppercase;
             cursor: pointer;
-            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: 0.5s;
         }
 
         .submit-btn:hover {
@@ -127,13 +127,13 @@
             margin-top: 60px;
             padding: 40px;
             text-align: center;
-            font-size: 0.5rem;
-            letter-spacing: 4px;
+            font-size: 0.55rem;
+            letter-spacing: 5px;
             opacity: 0.3;
         }
 
         @media (max-width: 768px) {
-            form { grid-template-columns: 1fr; padding: 25px; }
+            form { grid-template-columns: 1fr; padding: 30px 20px; }
             .full-width { grid-column: span 1; }
             .header-form h1 { letter-spacing: 6px; }
         }
@@ -145,7 +145,7 @@
 
     <div class="form-container">
         <header class="header-form">
-            <p>Portal Interno</p>
+            <p>Onboarding Estratégico</p>
             <h1>CÍRCULO RESTRITO</h1>
         </header>
 
@@ -158,12 +158,12 @@
 
             <div class="input-group">
                 <label>WhatsApp</label>
-                <input type="text" name="entry.2128207175" placeholder="+55 11 99999-9999" required>
+                <input type="text" name="entry.2128207175" placeholder="+55 (00) 00000-0000" required>
             </div>
 
             <div class="input-group">
-                <label>Email</label>
-                <input type="email" name="entry.1669864852" placeholder="email@exemplo.com" required>
+                <label>E-mail Corporativo</label>
+                <input type="email" name="entry.1669864852" placeholder="contato@exemplo.com" required>
             </div>
 
             <div class="input-group">
@@ -173,24 +173,20 @@
 
             <div class="input-group">
                 <label>Valor Mensal</label>
-                <input type="text" name="entry.971745504" placeholder="R$ 0,00" required>
+                <input type="text" name="entry.971745504" placeholder="R$ 0.000,00" required>
             </div>
 
             <div class="input-group full-width">
-                <label>Meu Pix (Karen)</label>
-                <input type="text" name="entry.1483219488" placeholder="Chave para recebimento" required>
+                <label>Chave Pix para Recebimento (Karen)</label>
+                <input type="text" name="entry.1483219488" placeholder="Digite a chave Pix (E-mail, CPF ou Aleatória)" required>
             </div>
 
             <input type="hidden" name="entry.509815525_year" value="2026">
             <input type="hidden" name="entry.509815525_month" value="05">
             <input type="hidden" name="entry.509815525_day" value="04">
 
-            <button type="submit" class="submit-btn">Finalizar Cadastro</button>
+            <button type="submit" class="submit-btn">Finalizar Onboarding</button>
         </form>
-        
-        <p style="margin-top: 30px; font-size: 0.55rem; color: rgba(255,255,255,0.2); letter-spacing: 3px; text-transform: uppercase;">
-            Sistema de Onboarding Estratégico | Karen Souza.
-        </p>
     </div>
 
     <footer>
